@@ -1,6 +1,6 @@
 #-------------------------------------------------------------------------
-# AUTHOR: your name
-# FILENAME: title of the source file
+# AUTHOR: Britney Collier
+# FILENAME: decision_tree.py
 # SPECIFICATION: description of the program
 # FOR: CS 4210- Assignment #1
 # TIME SPENT: how long it took you to complete the assignment
