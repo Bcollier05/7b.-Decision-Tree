@@ -22,16 +22,23 @@ with open('contact_lens.csv', 'r') as csvfile:
   reader = csv.reader(csvfile)
   for i, row in enumerate(reader):
       if i > 0: #skipping the header
-         db.append (row)
+         db.append(row)
          print(row)
 
 #transform the original categorical training features into numbers and add to the 4D array X. For instance Young = 1, Prepresbyopic = 2, Presbyopic = 3
 #--> add your Python code here
-# X =
+age = {"Young": 1, "Prepresbyopic": 2, "Presbyopic": 3}
+spectacle = {"Myope": 1, "Hypermetrope": 2}
+astigmatism = {"No": 1, "Yes": 2}
+tear = {"Reduced": 1, "Normal": 2}
+
+X = [[age.get(row[0]), spectacle.get(row[1]), astigmatism.get(row[2]), tear.get(row[3])] for row in db]
 
 #transform the original categorical training classes into numbers and add to the vector Y. For instance Yes = 1, No = 2
 #--> addd your Python code here
-# Y =
+recommendation = {"Yes": 1, "No": 2}
+
+Y = [recommendation.get(row[4]) for row in db]
 
 #fitting the decision tree to the data
 clf = tree.DecisionTreeClassifier(criterion = 'entropy')
